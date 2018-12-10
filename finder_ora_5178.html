@@ -1,0 +1,851 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<!--                                         -->
+<!-- OraSRP v3.1.2 beta                        -->
+<!-- Copyright (c) 2006-2007, Egor Starostin -->
+<!-- Written in D programming language       -->
+<!--                                         -->
+<!--                                         -->
+<!-- options used:                           -->
+<!-- aggregate similar statements: true -->
+<!-- max bind-sets to display: 1 -->
+<!-- max bind-sets to analyze: 2147483647 -->
+<!-- print sys statements: true -->
+<!-- sections to display in report: waitstat, statements, top5, summary, callgraph, histograms, flatprofile -->
+<!-- sort order: totela -->
+<!-- threshold: -1000% -->
+<!--                                         -->
+<title> finder_ora_5178.trc2 / Oracle Session Profiler</title>
+<style type="text/css">
+
+body {
+  font-family: Tahoma, Arial;
+  font-size: smaller;
+  color: #333; background: #fff;
+  text-align: left;
+  margin: 4px 20px 4px 20px; padding: 4px; border: 4px;
+}
+a:link {color: #a30}
+a:visited {color: #a30}
+.sectionTitleTop {color: #369; font-size: 140%; font-weight: bold; margin: 20px 0px 4px 0px}
+.sectionTitle {color: #369; font-size: 140%; font-weight: bold; margin: 50px 0px 4px 0px}
+.elementTitle {color: #369; font-size: 120%; font-weight: bold; margin: 20px 0px 4px 0px}
+.alert {color: #f00;}
+.copyright { 
+  font-size: 80%; text-align: center; color: #444; margin: 0px 4px 0px 4px; padding: 6px 4px 0px 4px; 
+  border-top: dotted 1px #444;
+}
+.stmt {
+  background: #cc9; font-weight: bold; margin: 20px 0px 0px 0px; padding: 4px; order: 1px solid #cca; width: 99%
+  border-left: 1px solid #eeb; border-top: 1px solid #eeb; border-right: 1px solid #555; border-bottom: 1px solid #555; 
+}
+pre { border: 0px; margin: 0px; padding: 0px; font-size: 100% }
+h1,h2,h3,h4 {color: #369}
+table { border-collapse: collapse}
+.tp th { 
+  text-align: center; background: #cc9; color: #369;
+  border-left: 1px solid #eeb; border-top: 1px solid #eeb; border-right: 1px solid #555; border-bottom: 1px solid #555; 
+  padding: 2px; 
+}
+.tp td { 
+  font-family: Courier New, Courier, monospaced;
+  border: 1px solid #cca; padding: 2px; text-align: right; background: #f7f7e7
+}
+.fselect td{border: 0px; padding: 0px; font-family: Tahoma, Arial; text-align: left}
+.flistsubmit td{padding: 4px 0px 4px 0px; margin: 0px}
+.flist td{border:0px; padding: 0px; border-bottom:1px solid #bbb; font-family: Tahoma, Arial; text-align: left}
+.histplace { padding: 1em; border: 1px solid #cca; width: 60%; background: #f7f7e7 }
+.histtext {
+  font-family: courier; white-space: pre; float: left; padding: 0px 4px 0px 4px; margin: 0px; 
+  text-align: right
+}
+.histbar {
+  border-style: solid; border-width: 1px; border-color: #eee #777 #777 #aaa;
+  padding: 0px; margin: 0px; display: block; font-size: 80%; 
+  background: #aaa; float: left; text-align: right;
+}
+.histbarempty {
+  border-style: solid; border-width: 1px; border-color: #fff #ddd #ddd #fff; 
+  padding: 0px; margin: 0px; display: block; font-size: 80%; 
+  background: #eee; float: left; text-align: right;
+}
+.histbaravr {
+  border-style: solid; border-width: 1px; border-color: #cfc #0c0 #0c0 #cfc; 
+  padding: 0px; margin: 0px; display: block; font-size: 80%; 
+  background: #0f0; float: left; text-align: right;
+}
+.histvalue {
+  font-size: 50%; padding: 0px 4px 0px 4px; margin: 2px; 
+  ext-align: left; loat:right; 
+}
+.leftbox { text-align: left; float: left; }
+.rightbox { text-align: right; float: right; }
+#pleasewait {visibility: visible; text-align: center; font-size: 100%; font-weight: bold;}
+        
+</style>
+</head>
+<body>
+<div class=leftbox>
+<div class=sectionTitleTop>Session Summary</div>
+Total SQL Statements: 9 (7 user statements, 2 internal statements)<br>
+Total Transactions: 0 (0 rollback(s), 0 read-only)<br>
+<!-- Total lines processed in trace file: 1,003 -->
+<!-- Time spent for parsing trace file: 0.07 sec -->
+</div> <!-- end of leftbox -->
+<div class=rightbox>
+<div class=sectionTitleTop>Report Shortcuts</div>
+<a href="#flatprofile">Session Flat Profile</a><br>
+<a href="#top5">Top 5 Statements per Event</a><br>
+<a href="#callgraph">Session Call Graph</a><br>
+<a href="#histograms">Events Histograms</a><br>
+<a href="#statements">Statements</a><br>
+</div> <!-- end of rightbox -->
+<br clear=left>
+<div class=sectionTitle><a name=flatprofile>Session Flat Profile</a></div>
+<table width=90% class=tp><tr> <th width=30% rowspan=2> Event Name <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#SQL_Net_message_from_client">SQL*Net message from client</a> <td> 79.7%  <td> 0.0042s <td> 25 <td> 0.0001s <td> 0.0000s <td> 0.0040s </tr>
+<tr> <td> <a href="#SQL_Net_message_from_client__idle_">SQL*Net message from client [idle]</a> <td> 16.6%  <td> 0.0008s <td> 10 <td> 0.0000s <td> 0.0000s <td> 0.0008s </tr>
+<tr> <td> <a href="#FETCH_calls__CPU_">FETCH calls [CPU]</a> <td> 2.9%  <td> 0.0001s <td> 394 <td> 0.0000s <td> 0.0000s <td> 0.0001s </tr>
+<tr> <td> <a href="#db_file_sequential_read">db file sequential read</a> <td> 0.5%  <td> 0.0000s <td> 228 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#EXEC_calls__CPU_">EXEC calls [CPU]</a> <td> 0.1%  <td> 0.0000s <td> 48 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#PARSE_calls__CPU_">PARSE calls [CPU]</a> <td> 0.1%  <td> 0.0000s <td> 13 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#db_file_scattered_read">db file scattered read</a> <td> 0.0%  <td> 0.0000s <td> 4 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_break/reset_to_client">SQL*Net break/reset to client</a> <td> 0.0%  <td> 0.0000s <td> 2 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_more_data_to_client">SQL*Net more data to client</a> <td> 0.0%  <td> 0.0000s <td> 5 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_message_to_client">SQL*Net message to client</a> <td> 0.0%  <td> 0.0000s <td> 35 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#file_open">file open</a> <td> 0.0%  <td> 0.0000s <td> 6 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> unaccounted-for time <td> -0.0% <td> -0.0000s <td> &nbsp; <td> &nbsp; <td> &nbsp; <td> &nbsp; </tr>
+<tr><td><b>Total</b><td><b>100.0%</b><td><b>0.0053s</b><td colspan=4>&nbsp;</tr>
+</table>
+<div class=sectionTitle><a name=top5>Top 5 Statements per Event</a></div>
+<div class=elementTitle><a name=SQL_Net_message_from_client>SQL*Net message from client</a></div>
+<table width=75% class=tp><tr> <th width=15% rowspan=2> SQL Statement Id <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#1966425544" title="select text from view$ where rowid=:1">1966425544      </a> <td>    96.2% <td>      0.0040s <td>         1 <td>     0.0040s <td>     0.0040s <td>     0.0040s </tr>
+<tr> <td> <a href="#1274158960" title="SELECT ROWID,EVENT_ID,UWI,LAYER,PERF_TYPE,COMP_TYPE,POS,SOURCE,COMP_DATE,CLOS...">1274158960      </a> <td>     3.8% <td>      0.0001s <td>         1 <td>     0.0001s <td>     0.0001s <td>     0.0001s </tr>
+<tr> <td> <a href="#1513864134" title="SELECT PROJ_FINDER, FIELD_NAME, FIELD_CODE FROM CLASS.ALL_FIELD_HDR FH, SYS.A...">1513864134      </a> <td>     0.0% <td>      0.0000s <td>        22 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#908646012" title="SELECT FIELD_NAME,PROJ_FINDER FROM CLASS.ALL_FIELD_HDR WHERE FIELD_CODE = :b1">908646012       </a> <td>     0.0% <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <b>Total           </b> <td> <b>  100.0%</b> <td> <b>     0.0042s</b><td> <b>       25</b> <td> <b>    0.0001s</b> <td> <b>    0.0000s</b> <td> <b>    0.0040s</b> </tr>
+</table>
+<div class=elementTitle><a name=SQL_Net_message_from_client__idle_>SQL*Net message from client [idle]</a></div>
+<table width=75% class=tp><tr> <th width=15% rowspan=2> SQL Statement Id <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#1513864134" title="SELECT PROJ_FINDER, FIELD_NAME, FIELD_CODE FROM CLASS.ALL_FIELD_HDR FH, SYS.A...">1513864134      </a> <td>    97.6% <td>      0.0008s <td>         1 <td>     0.0008s <td>     0.0008s <td>     0.0008s </tr>
+<tr> <td> <a href="#Cursor__0" title="">Cursor #0       </a> <td>     1.1% <td>      0.0000s <td>         2 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#pe/000000" title="SELECT DISTINCT NAME, SOURCE FROM DVURECH.WELL_SELECT_LISTS B WHERE A.DATA_TY...">pe/000000       </a> <td>     1.0% <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#2552766064" title="SELECT WELL_NAME,UWI,ELEVATION FROM (SELECT UWI, WELL_NAME, ELEVATION, LTRIM(...">2552766064      </a> <td>     0.2% <td>      0.0000s <td>         4 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#908646012" title="SELECT FIELD_NAME,PROJ_FINDER FROM CLASS.ALL_FIELD_HDR WHERE FIELD_CODE = :b1">908646012       </a> <td>     0.0% <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> 1 others         <td>     0.0% <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <b>Total           </b> <td> <b>  100.0%</b> <td> <b>     0.0008s</b><td> <b>       10</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> <td> <b>    0.0008s</b> </tr>
+</table>
+<div class=elementTitle><a name=FETCH_calls__CPU_>FETCH calls [CPU]</a></div>
+<table width=75% class=tp><tr> <th width=15% rowspan=2> SQL Statement Id <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#1513864134" title="SELECT PROJ_FINDER, FIELD_NAME, FIELD_CODE FROM CLASS.ALL_FIELD_HDR FH, SYS.A...">1513864134      </a> <td>    75.6% <td>      0.0001s <td>        23 <td>     0.0000s <td>     0.0000s <td>     0.0001s </tr>
+<tr> <td> <a href="#1274158960" title="SELECT ROWID,EVENT_ID,UWI,LAYER,PERF_TYPE,COMP_TYPE,POS,SOURCE,COMP_DATE,CLOS...">1274158960      </a> <td>    14.7% <td>      0.0000s <td>         2 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#1147782982" title="SELECT DISTINCT SOURCE, SOURCE FROM DVURECH.V_WELL_PERFORATIONS UNION SELECT ...">1147782982      </a> <td>     9.0% <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#626894880" title="SELECT REC_ID,COMP_DATE,TOP,BASE FROM WELL_PERFORATIONS WHERE UWI = :b1 ORDER...">626894880       </a> <td>     0.6% <td>      0.0000s <td>       342 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#1966425544" title="select text from view$ where rowid=:1">1966425544      </a> <td>     0.0% <td>      0.0000s <td>         5 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> 4 others         <td>     0.0% <td>      0.0000s <td>        21 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <b>Total           </b> <td> <b>  100.0%</b> <td> <b>     0.0001s</b><td> <b>      394</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> <td> <b>    0.0001s</b> </tr>
+</table>
+<div class=elementTitle><a name=db_file_sequential_read>db file sequential read</a></div>
+<table width=75% class=tp><tr> <th width=15% rowspan=2> SQL Statement Id <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#1513864134" title="SELECT PROJ_FINDER, FIELD_NAME, FIELD_CODE FROM CLASS.ALL_FIELD_HDR FH, SYS.A...">1513864134      </a> <td>   100.0% <td>      0.0000s <td>       224 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#1147782982" title="SELECT DISTINCT SOURCE, SOURCE FROM DVURECH.V_WELL_PERFORATIONS UNION SELECT ...">1147782982      </a> <td>     0.0% <td>      0.0000s <td>         3 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#1966425544" title="select text from view$ where rowid=:1">1966425544      </a> <td>     0.0% <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <b>Total           </b> <td> <b>  100.0%</b> <td> <b>     0.0000s</b><td> <b>      228</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> </tr>
+</table>
+<div class=elementTitle><a name=EXEC_calls__CPU_>EXEC calls [CPU]</a></div>
+<table width=75% class=tp><tr> <th width=15% rowspan=2> SQL Statement Id <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#626894880" title="SELECT REC_ID,COMP_DATE,TOP,BASE FROM WELL_PERFORATIONS WHERE UWI = :b1 ORDER...">626894880       </a> <td>    50.0% <td>      0.0000s <td>        18 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#1966425544" title="select text from view$ where rowid=:1">1966425544      </a> <td>    33.3% <td>      0.0000s <td>         5 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#908646012" title="SELECT FIELD_NAME,PROJ_FINDER FROM CLASS.ALL_FIELD_HDR WHERE FIELD_CODE = :b1">908646012       </a> <td>    16.7% <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#2760452225" title="SELECT UWI FROM WELL_PERFORATIONS WHERE REC_ID = :b1">2760452225      </a> <td>     0.0% <td>      0.0000s <td>        18 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#1005331575" title="select user# from sys.user$ where name = 'OUTLN'">1005331575      </a> <td>     0.0% <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> 4 others         <td>     0.0% <td>      0.0000s <td>         5 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <b>Total           </b> <td> <b>  100.0%</b> <td> <b>     0.0000s</b><td> <b>       48</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> </tr>
+</table>
+<div class=elementTitle><a name=PARSE_calls__CPU_>PARSE calls [CPU]</a></div>
+<table width=75% class=tp><tr> <th width=15% rowspan=2> SQL Statement Id <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#1513864134" title="SELECT PROJ_FINDER, FIELD_NAME, FIELD_CODE FROM CLASS.ALL_FIELD_HDR FH, SYS.A...">1513864134      </a> <td>    66.7% <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#1274158960" title="SELECT ROWID,EVENT_ID,UWI,LAYER,PERF_TYPE,COMP_TYPE,POS,SOURCE,COMP_DATE,CLOS...">1274158960      </a> <td>    16.7% <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#1147782982" title="SELECT DISTINCT SOURCE, SOURCE FROM DVURECH.V_WELL_PERFORATIONS UNION SELECT ...">1147782982      </a> <td>    16.7% <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#1966425544" title="select text from view$ where rowid=:1">1966425544      </a> <td>     0.0% <td>      0.0000s <td>         5 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#2760452225" title="SELECT UWI FROM WELL_PERFORATIONS WHERE REC_ID = :b1">2760452225      </a> <td>     0.0% <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> 4 others         <td>     0.0% <td>      0.0000s <td>         4 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <b>Total           </b> <td> <b>  100.0%</b> <td> <b>     0.0000s</b><td> <b>       13</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> </tr>
+</table>
+<div class=elementTitle><a name=db_file_scattered_read>db file scattered read</a></div>
+<table width=75% class=tp><tr> <th width=15% rowspan=2> SQL Statement Id <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#1147782982" title="SELECT DISTINCT SOURCE, SOURCE FROM DVURECH.V_WELL_PERFORATIONS UNION SELECT ...">1147782982      </a> <td>   100.0% <td>      0.0000s <td>         2 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#1513864134" title="SELECT PROJ_FINDER, FIELD_NAME, FIELD_CODE FROM CLASS.ALL_FIELD_HDR FH, SYS.A...">1513864134      </a> <td>     0.0% <td>      0.0000s <td>         2 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <b>Total           </b> <td> <b>  100.0%</b> <td> <b>     0.0000s</b><td> <b>        4</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> </tr>
+</table>
+<div class=elementTitle><a name=SQL_Net_break/reset_to_client>SQL*Net break/reset to client</a></div>
+<table width=75% class=tp><tr> <th width=15% rowspan=2> SQL Statement Id <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#pe/000000" title="SELECT DISTINCT NAME, SOURCE FROM DVURECH.WELL_SELECT_LISTS B WHERE A.DATA_TY...">pe/000000       </a> <td>    n/a % <td>      0.0000s <td>         2 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <b>Total           </b> <td> <b>  100.0%</b> <td> <b>     0.0000s</b><td> <b>        2</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> </tr>
+</table>
+<div class=elementTitle><a name=SQL_Net_more_data_to_client>SQL*Net more data to client</a></div>
+<table width=75% class=tp><tr> <th width=15% rowspan=2> SQL Statement Id <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#1274158960" title="SELECT ROWID,EVENT_ID,UWI,LAYER,PERF_TYPE,COMP_TYPE,POS,SOURCE,COMP_DATE,CLOS...">1274158960      </a> <td>    n/a % <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#Cursor__0" title="">Cursor #0       </a> <td>    n/a % <td>      0.0000s <td>         4 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <b>Total           </b> <td> <b>  100.0%</b> <td> <b>     0.0000s</b><td> <b>        5</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> </tr>
+</table>
+<div class=elementTitle><a name=SQL_Net_message_to_client>SQL*Net message to client</a></div>
+<table width=75% class=tp><tr> <th width=15% rowspan=2> SQL Statement Id <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#2552766064" title="SELECT WELL_NAME,UWI,ELEVATION FROM (SELECT UWI, WELL_NAME, ELEVATION, LTRIM(...">2552766064      </a> <td>    n/a % <td>      0.0000s <td>         3 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#908646012" title="SELECT FIELD_NAME,PROJ_FINDER FROM CLASS.ALL_FIELD_HDR WHERE FIELD_CODE = :b1">908646012       </a> <td>    n/a % <td>      0.0000s <td>         3 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#1147782982" title="SELECT DISTINCT SOURCE, SOURCE FROM DVURECH.V_WELL_PERFORATIONS UNION SELECT ...">1147782982      </a> <td>    n/a % <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#pe/000000" title="SELECT DISTINCT NAME, SOURCE FROM DVURECH.WELL_SELECT_LISTS B WHERE A.DATA_TY...">pe/000000       </a> <td>    n/a % <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#1274158960" title="SELECT ROWID,EVENT_ID,UWI,LAYER,PERF_TYPE,COMP_TYPE,POS,SOURCE,COMP_DATE,CLOS...">1274158960      </a> <td>    n/a % <td>      0.0000s <td>         2 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> 2 others         <td>    n/a % <td>      0.0000s <td>        25 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <b>Total           </b> <td> <b>  100.0%</b> <td> <b>     0.0000s</b><td> <b>       35</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> </tr>
+</table>
+<div class=elementTitle><a name=file_open>file open</a></div>
+<table width=75% class=tp><tr> <th width=15% rowspan=2> SQL Statement Id <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#1147782982" title="SELECT DISTINCT SOURCE, SOURCE FROM DVURECH.V_WELL_PERFORATIONS UNION SELECT ...">1147782982      </a> <td>    n/a % <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#1966425544" title="select text from view$ where rowid=:1">1966425544      </a> <td>    n/a % <td>      0.0000s <td>         1 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <a href="#1513864134" title="SELECT PROJ_FINDER, FIELD_NAME, FIELD_CODE FROM CLASS.ALL_FIELD_HDR FH, SYS.A...">1513864134      </a> <td>    n/a % <td>      0.0000s <td>         4 <td>     0.0000s <td>     0.0000s <td>     0.0000s </tr>
+<tr> <td> <b>Total           </b> <td> <b>  100.0%</b> <td> <b>     0.0000s</b><td> <b>        6</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> <td> <b>    0.0000s</b> </tr>
+</table>
+<div class=sectionTitle><a name=callgraph>Session Call Graph</a></div>
+<table width=83% class=tp><tr><th width=20%> SQL Statement Id<th width=5%> Branch %<th width=5%> Total %<th width=10%> Self<br>Seconds<th width=10%> Cumulative<br>Seconds<th width=8%> Calls<th width=5%> Similar<th width=20%> Command Type </tr>
+<tr><td style='text-align:left; white-space:pre'><a href=#1513864134 title="SELECT PROJ_FINDER, FIELD_NAME, FIELD_CODE FROM CLASS.ALL_FIELD_HDR FH, SYS.A...">1513864134</a><br>  <a href=#1966425544 title="select text from view$ where rowid=:1">1966425544</a><td>99.3%<br>0.7%<td>75.3%<br>0.5%<td>0.0001s<br>0.0000s<td>0.0001s<br>0.0000s<td>25<br>6<td>0<br>0<td>SELECT<br>SELECT
+</tr>
+<tr><td style='text-align:left; white-space:pre'><a href=#1274158960 title="SELECT ROWID,EVENT_ID,UWI,LAYER,PERF_TYPE,COMP_TYPE,POS,SOURCE,COMP_DATE,CLOS...">1274158960</a><br>  <a href=#2760452225 title="SELECT UWI FROM WELL_PERFORATIONS WHERE REC_ID = :b1">2760452225</a><br>    <a href=#1005331575 title="select user# from sys.user$ where name = 'OUTLN'">1005331575</a><br>  <a href=#626894880 title="SELECT REC_ID,COMP_DATE,TOP,BASE FROM WELL_PERFORATIONS WHERE UWI = :b1 ORDER...">626894880</a><br>  <a href=#1966425544 title="select text from view$ where rowid=:1">1966425544</a><td>96.3%<br>3.7%<br>0.0%<br>0.0%<br>0.0%<td>13.9%<br>0.5%<br>0.0%<br>0.0%<br>0.0%<td>0.0000s<br>0.0000s<br>0.0000s<br>0.0000s<br>0.0000s<td>0.0000s<br>0.0000s<br>0.0000s<br>0.0000s<br>0.0000s<td>5<br>37<br>3<br>361<br>3<td>0<br>0<br>0<br>0<br>0<td>SELECT<br>SELECT<br>SELECT<br>SELECT<br>SELECT
+</tr>
+<tr><td style='text-align:left; white-space:pre'><a href=#1147782982 title="SELECT DISTINCT SOURCE, SOURCE FROM DVURECH.V_WELL_PERFORATIONS UNION SELECT ...">1147782982</a><br>  <a href=#1966425544 title="select text from view$ where rowid=:1">1966425544</a><td>100.0%<br>0.0%<td>9.3%<br>0.0%<td>0.0000s<br>0.0000s<td>0.0000s<br>0.0000s<td>3<br>3<td>0<br>0<td>SELECT<br>SELECT
+</tr>
+<tr><td style='text-align:left; white-space:pre'><a href=#908646012 title="SELECT FIELD_NAME,PROJ_FINDER FROM CLASS.ALL_FIELD_HDR WHERE FIELD_CODE = :b1">908646012</a><br>  <a href=#1966425544 title="select text from view$ where rowid=:1">1966425544</a><td>100.0%<br>0.0%<td>1.0%<br>0.0%<td>0.0000s<br>0.0000s<td>0.0000s<br>0.0000s<td>3<br>3<td>0<br>0<td>SELECT<br>SELECT
+</tr>
+<tr><td style='text-align:left; white-space:pre'><a href=#2552766064 title="SELECT WELL_NAME,UWI,ELEVATION FROM (SELECT UWI, WELL_NAME, ELEVATION, LTRIM(...">2552766064</a><td>100.0%<td>0.5%<td>0.0000s<td>0.0000s<td>3<td>0<td>SELECT
+</table>
+<div class=sectionTitle><a name=histograms>Events Histograms</a></div>
+<div class=elementTitle>SQL*Net message from client</div>
+<table class=tp width=60%>
+<tr><th width=10%> value <th width=40%> - Distribution - <th width=10%> count </tr>
+<tr><td>0.000000s<td> <span class=histbar style='width:84%'> &nbsp; </span> <td> 21 </tr>
+<tr><td>0.000001s<td> <span class=histbar style='width:8%'> &nbsp; </span> <td> 2 </tr>
+<tr><td>0.000002s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000004s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000008s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000016s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000032s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000064s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000128s<td> <span class=histbar style='width:4%'> &nbsp; </span> <td> 1 </tr>
+<tr><td>0.000256s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000512s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.001024s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.002048s<td> <span class=histbar style='width:4%'> &nbsp; </span> <td> 1 </tr>
+<tr><td>0.004096s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+</table>
+<div class=elementTitle>SQL*Net message from client [idle]</div>
+<table class=tp width=60%>
+<tr><th width=10%> value <th width=40%> - Distribution - <th width=10%> count </tr>
+<tr><td>0.000000s<td> <span class=histbar style='width:50%'> &nbsp; </span> <td> 5 </tr>
+<tr><td>0.000001s<td> <span class=histbar style='width:20%'> &nbsp; </span> <td> 2 </tr>
+<tr><td>0.000002s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000004s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000008s<td> <span class=histbar style='width:20%'> &nbsp; </span> <td> 2 </tr>
+<tr><td>0.000016s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000032s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000064s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000128s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000256s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000512s<td> <span class=histbar style='width:10%'> &nbsp; </span> <td> 1 </tr>
+<tr><td>0.001024s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+</table>
+<div class=elementTitle>FETCH calls [CPU]</div>
+<table class=tp width=60%>
+<tr><th width=10%> value <th width=40%> - Distribution - <th width=10%> count </tr>
+<tr><td>0.000000s<td> <span class=histbar style='width:98%'> &nbsp; </span> <td> 390 </tr>
+<tr><td>0.000001s<td> <span class=histbar style='width:0%'> &nbsp; </span> <td> 1 </tr>
+<tr><td>0.000002s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000004s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000008s<td> <span class=histbar style='width:0%'> &nbsp; </span> <td> 1 </tr>
+<tr><td>0.000016s<td> <span class=histbar style='width:0%'> &nbsp; </span> <td> 1 </tr>
+<tr><td>0.000032s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000064s<td> <span class=histbar style='width:0%'> &nbsp; </span> <td> 1 </tr>
+<tr><td>0.000128s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+</table>
+<div class=elementTitle>db file sequential read</div>
+<table class=tp width=60%>
+<tr><th width=10%> value <th width=40%> - Distribution - <th width=10%> count </tr>
+<tr><td>0.000000s<td> <span class=histbar style='width:89%'> &nbsp; </span> <td> 203 </tr>
+<tr><td>0.000001s<td> <span class=histbar style='width:9%'> &nbsp; </span> <td> 22 </tr>
+<tr><td>0.000002s<td> <span class=histbar style='width:1%'> &nbsp; </span> <td> 3 </tr>
+<tr><td>0.000004s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+</table>
+<div class=elementTitle>EXEC calls [CPU]</div>
+<table class=tp width=60%>
+<tr><th width=10%> value <th width=40%> - Distribution - <th width=10%> count </tr>
+<tr><td>0.000000s<td> <span class=histbar style='width:87%'> &nbsp; </span> <td> 42 </tr>
+<tr><td>0.000001s<td> <span class=histbar style='width:12%'> &nbsp; </span> <td> 6 </tr>
+<tr><td>0.000002s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+</table>
+<div class=elementTitle>PARSE calls [CPU]</div>
+<table class=tp width=60%>
+<tr><th width=10%> value <th width=40%> - Distribution - <th width=10%> count </tr>
+<tr><td>0.000000s<td> <span class=histbar style='width:76%'> &nbsp; </span> <td> 10 </tr>
+<tr><td>0.000001s<td> <span class=histbar style='width:15%'> &nbsp; </span> <td> 2 </tr>
+<tr><td>0.000002s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000004s<td> <span class=histbar style='width:7%'> &nbsp; </span> <td> 1 </tr>
+<tr><td>0.000008s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+</table>
+<div class=elementTitle>db file scattered read</div>
+<table class=tp width=60%>
+<tr><th width=10%> value <th width=40%> - Distribution - <th width=10%> count </tr>
+<tr><td>0.000000s<td> <span class=histbar style='width:75%'> &nbsp; </span> <td> 3 </tr>
+<tr><td>0.000001s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+<tr><td>0.000002s<td> <span class=histbar style='width:25%'> &nbsp; </span> <td> 1 </tr>
+<tr><td>0.000004s<td> <span class=histbarempty style='width:0%'> &nbsp; </span> <td> 0 </tr>
+</table>
+<div class=elementTitle>SQL*Net break/reset to client</div>
+<table class=tp width=60%>
+<tr><th width=10%> value <th width=40%> - Distribution - <th width=10%> count </tr>
+<tr><td>0.000000s<td> <span class=histbar style='width:100%'> &nbsp; </span> <td> 2 </tr>
+</table>
+<div class=elementTitle>SQL*Net more data to client</div>
+<table class=tp width=60%>
+<tr><th width=10%> value <th width=40%> - Distribution - <th width=10%> count </tr>
+<tr><td>0.000000s<td> <span class=histbar style='width:100%'> &nbsp; </span> <td> 5 </tr>
+</table>
+<div class=elementTitle>SQL*Net message to client</div>
+<table class=tp width=60%>
+<tr><th width=10%> value <th width=40%> - Distribution - <th width=10%> count </tr>
+<tr><td>0.000000s<td> <span class=histbar style='width:100%'> &nbsp; </span> <td> 35 </tr>
+</table>
+<div class=elementTitle>file open</div>
+<table class=tp width=60%>
+<tr><th width=10%> value <th width=40%> - Distribution - <th width=10%> count </tr>
+<tr><td>0.000000s<td> <span class=histbar style='width:100%'> &nbsp; </span> <td> 6 </tr>
+</table>
+<div class=sectionTitle>Session Read Statistics</div>
+<table width=70% class=tp>
+<tr> <th rowspan=2 width=25%>Blocks Read per Call<th rowspan=2 width=10%> % Time <th rowspan=2 width=10%> Seconds <th rowspan=2 width=10%> Calls <th colspan=3 width=30%> - Time per Call -</tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr><td>1<td>93.3%<td>0.0000s<td>228<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>5<td>6.7%<td>0.0000s<td>2<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>2<td>0.0%<td>0.0000s<td>1<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>3<td>0.0%<td>0.0000s<td>1<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td> <b>Total</b> <td> <b>100.0%</b> <td> <b>0.0000s</b><td> <b>232</b><td> <b>0.0000s</b><td> <b>0.0000s</b><td> <b>0.0000s</b>
+</table>
+<div class=sectionTitle>Session Read Datafiles Statistics</div>
+<table width=70% class=tp>
+<tr> <th rowspan=2 width=25%>Datafile #          <th rowspan=2 width=10%> % Time <th rowspan=2 width=10%> Seconds <th rowspan=2 width=10%> Calls <th colspan=3 width=30%> - Time per Call -</tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr><td>2<td>56.7%<td>0.0000s<td>116<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>1<td>36.7%<td>0.0000s<td>105<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>9<td>6.7%<td>0.0000s<td>3<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>32<td>0.0%<td>0.0000s<td>4<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>7<td>0.0%<td>0.0000s<td>1<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>8<td>0.0%<td>0.0000s<td>3<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td> <b>Total</b> <td> <b>100.0%</b> <td> <b>0.0000s</b><td> <b>232</b><td> <b>0.0000s</b><td> <b>0.0000s</b><td> <b>0.0000s</b>
+</table>
+<div class=sectionTitle><a name=statements>SQL Statements</a></div>
+<a name=1513864134> </a>
+<div class=stmt>SQL Statement Id: 1513864134&nbsp;&nbsp;&nbsp;&nbsp; uid: 826&nbsp;&nbsp;&nbsp;&nbsp;depth: 0&nbsp;&nbsp;&nbsp;&nbsp;optimizer mode: CHOOSE</div>
+<div class=elementTitle>Statement Text</div>
+<pre>SELECT PROJ_FINDER, FIELD_NAME, FIELD_CODE 
+FROM CLASS.ALL_FIELD_HDR FH, SYS.ALL_TABLES AT 
+WHERE AT.TABLE_NAME = 'WELL_PERFORATIONS' AND AT.OWNER = FH.PROJ_FINDER 
+order by field_name
+
+</pre>
+<div class=elementTitle>Statement Cumulative Statistics</div>
+<table class=tp width=90%>
+<tr><th rowspan=2 width=10%>Call<th rowspan=2 width=8%>Cache<br>Misses<th rowspan=2 width=10%>Count<th colspan=2 width=20%> - Seconds -<th rowspan=2 width=10%>Physical<br>Reads<th colspan=2 width=20%> - Logical Reads -<th rowspan=2 width=10%>Rows
+<tr><th width=10%>CPU<th width=10%>Elapsed<th width=10%>Consistent<th width=10%>Current
+<tr><td>  Parse  <td>      1  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          1  <td>          4  <td>          0  <td>        0
+<tr><td>   Exec  <td>      0  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>  Fetch  <td> &nbsp;  <td>       23  <td>     0.0001s  <td>     0.0001s  <td>        232  <td>     22,753  <td>      1,816  <td>      456
+<tr><td><b>  Total</b>  <td><b>      1</b>  <td><b>       25</b> <td><b>     0.0001s</b>  <td><b>     0.0001s</b>  <td><b>        233</b>  <td><b>     22,757</b>  <td><b>      1,816</b>  <td><b>      456</b>
+<tr><td colspan=9 height=10>
+<tr><td>Per Fch  <td>    0.0  <td>      1.1  <td>     0.0000s  <td>     0.0000s  <td>       10.1  <td>      989.4  <td>       79.0  <td>     19.8
+<tr><td>Per Row  <td>    0.0  <td>      0.0  <td>     0.0000s  <td>     0.0000s  <td>        0.5  <td>       49.9  <td>        4.0  <td>      1.0
+</table>
+<div class=elementTitle>Statement Self Statistics</div>
+<table class=tp width=90%>
+<tr><th rowspan=2 width=10%>Call<th rowspan=2 width=8%>Cache<br>Misses<th rowspan=2 width=10%>Count<th colspan=2 width=20%> - Seconds -<th rowspan=2 width=10%>Physical<br>Reads<th colspan=2 width=20%> - Logical Reads -<th rowspan=2 width=10%>Rows
+<tr><th width=10%>CPU<th width=10%>Elapsed<th width=10%>Consistent<th width=10%>Current
+<tr><td>  Parse  <td>      1  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>   Exec  <td>      0  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>  Fetch  <td> &nbsp;  <td>       23  <td>     0.0001s  <td>     0.0001s  <td>        232  <td>     22,753  <td>      1,816  <td>      456
+<tr><td><b>  Total</b>  <td><b>      1</b>  <td><b>       25</b>  <td><b>     0.0001s</b>  <td><b>     0.0001s</b>  <td><b>        232</b>  <td><b>     22,753</b>  <td><b>      1,816</b>  <td><b>      456</b>
+<tr><td colspan=9 height=10>
+<tr><td>Per Fch  <td>    0.0  <td>      1.1  <td>     0.0000s  <td>     0.0000s  <td>       10.1  <td>      989.3  <td>       79.0  <td>     19.8
+<tr><td>Per Row  <td>    0.0  <td>      0.0  <td>     0.0000s  <td>     0.0000s  <td>        0.5  <td>       49.9  <td>        4.0  <td>      1.0
+</table>
+<div class=elementTitle>Statement Flat Profile</div>
+<table width=90% class=tp><tr> <th width=30% rowspan=2> Event Name <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#SQL_Net_message_from_client__idle_">SQL*Net message from client [idle]</a> <td> 85.1%  <td> 0.0008s <td> 1 <td> 0.0008s <td> 0.0008s <td> 0.0008s </tr>
+<tr> <td> <a href="#FETCH_calls__CPU_">FETCH calls [CPU]</a> <td> 11.6%  <td> 0.0001s <td> 23 <td> 0.0000s <td> 0.0000s <td> 0.0001s </tr>
+<tr> <td> <a href="#db_file_sequential_read">db file sequential read</a> <td> 2.8%  <td> 0.0000s <td> 224 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#PARSE_calls__CPU_">PARSE calls [CPU]</a> <td> 0.4%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_message_from_client">SQL*Net message from client</a> <td> 0.2%  <td> 0.0000s <td> 22 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#EXEC_calls__CPU_">EXEC calls [CPU]</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#db_file_scattered_read">db file scattered read</a> <td> 0.0%  <td> 0.0000s <td> 2 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_message_to_client">SQL*Net message to client</a> <td> 0.0%  <td> 0.0000s <td> 23 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#file_open">file open</a> <td> 0.0%  <td> 0.0000s <td> 4 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr><td><b>Total</b><td><b>100.0%</b><td><b>0.0010s</b><td colspan=4>&nbsp;</tr>
+</table>
+<br>
+<div class=elementTitle>Statement Read Statistics</div>
+<table width=70% class=tp>
+<tr> <th rowspan=2 width=25%>Blocks Read per Call<th rowspan=2 width=10%> % Time <th rowspan=2 width=10%> Seconds <th rowspan=2 width=10%> Calls <th colspan=3 width=30%> - Time per Call -</tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr><td>1<td>100.0%<td>0.0000s<td>224<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>3<td>0.0%<td>0.0000s<td>1<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>5<td>0.0%<td>0.0000s<td>1<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td> <b>Total</b> <td> <b>100.0%</b> <td> <b>0.0000s</b><td> <b>226</b><td> <b>0.0000s</b><td> <b>0.0000s</b><td> <b>0.0000s</b>
+</table>
+<div class=elementTitle>Statement Read Datafiles Statistics</div>
+<table width=70% class=tp>
+<tr> <th rowspan=2 width=25%>Datafile #          <th rowspan=2 width=10%> % Time <th rowspan=2 width=10%> Seconds <th rowspan=2 width=10%> Calls <th colspan=3 width=30%> - Time per Call -</tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr><td>2<td>60.7%<td>0.0000s<td>116<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>1<td>39.3%<td>0.0000s<td>104<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>32<td>0.0%<td>0.0000s<td>4<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>7<td>0.0%<td>0.0000s<td>1<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>8<td>0.0%<td>0.0000s<td>1<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td> <b>Total</b> <td> <b>100.0%</b> <td> <b>0.0000s</b><td> <b>226</b><td> <b>0.0000s</b><td> <b>0.0000s</b><td> <b>0.0000s</b>
+</table>
+<br>
+<a name=1274158960> </a>
+<div class=stmt>SQL Statement Id: 1274158960&nbsp;&nbsp;&nbsp;&nbsp; uid: 826&nbsp;&nbsp;&nbsp;&nbsp;depth: 0&nbsp;&nbsp;&nbsp;&nbsp;optimizer mode: CHOOSE</div>
+<div class=elementTitle>Statement Text</div>
+<pre>SELECT
+  ROWID,EVENT_ID,UWI,LAYER,PERF_TYPE,COMP_TYPE,POS,SOURCE,COMP_DATE,CLOSE_DATE,PERF_STATUS,TOP,BASE,SHORT_PERF_TYPE,PERF_SHOTS,PERFS_PER,REMARKS
+FROM DVURECH.V_WELL_PERFORATIONS A 
+WHERE source=nvl(:1,source) and (UWI=:2) 
+order by comp_date
+
+</pre>
+<div class=elementTitle>Statement Cumulative Statistics</div>
+<table class=tp width=90%>
+<tr><th rowspan=2 width=10%>Call<th rowspan=2 width=8%>Cache<br>Misses<th rowspan=2 width=10%>Count<th colspan=2 width=20%> - Seconds -<th rowspan=2 width=10%>Physical<br>Reads<th colspan=2 width=20%> - Logical Reads -<th rowspan=2 width=10%>Rows
+<tr><th width=10%>CPU<th width=10%>Elapsed<th width=10%>Consistent<th width=10%>Current
+<tr><td>  Parse  <td>      1  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          2  <td>          0  <td>        0
+<tr><td>   Exec  <td>      0  <td>        2  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>  Fetch  <td> &nbsp;  <td>        2  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>        332  <td>          0  <td>       18
+<tr><td><b>  Total</b>  <td><b>      1</b>  <td><b>        5</b> <td><b>     0.0000s</b>  <td><b>     0.0000s</b>  <td><b>          0</b>  <td><b>        334</b>  <td><b>          0</b>  <td><b>       18</b>
+<tr><td colspan=9 height=10>
+<tr><td>Per Fch  <td>    0.5  <td>      2.5  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>      167.0  <td>        0.0  <td>      9.0
+<tr><td>Per Row  <td>    0.0  <td>      0.3  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>       18.6  <td>        0.0  <td>      1.0
+</table>
+<div class=elementTitle>Statement Self Statistics</div>
+<table class=tp width=90%>
+<tr><th rowspan=2 width=10%>Call<th rowspan=2 width=8%>Cache<br>Misses<th rowspan=2 width=10%>Count<th colspan=2 width=20%> - Seconds -<th rowspan=2 width=10%>Physical<br>Reads<th colspan=2 width=20%> - Logical Reads -<th rowspan=2 width=10%>Rows
+<tr><th width=10%>CPU<th width=10%>Elapsed<th width=10%>Consistent<th width=10%>Current
+<tr><td>  Parse  <td>      1  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>   Exec  <td>      0  <td>        2  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>  Fetch  <td> &nbsp;  <td>        2  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>        221  <td>          0  <td>       18
+<tr><td><b>  Total</b>  <td><b>      1</b>  <td><b>        5</b>  <td><b>     0.0000s</b>  <td><b>     0.0000s</b>  <td><b>          0</b>  <td><b>        221</b>  <td><b>          0</b>  <td><b>       18</b>
+<tr><td colspan=9 height=10>
+<tr><td>Per Fch  <td>    0.5  <td>      2.5  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>      110.5  <td>        0.0  <td>      9.0
+<tr><td>Per Row  <td>    0.0  <td>      0.3  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>       12.3  <td>        0.0  <td>      1.0
+</table>
+<div class=elementTitle>Statement Flat Profile</div>
+<table width=90% class=tp><tr> <th width=30% rowspan=2> Event Name <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#SQL_Net_message_from_client">SQL*Net message from client</a> <td> 87.0%  <td> 0.0001s <td> 1 <td> 0.0001s <td> 0.0001s <td> 0.0001s </tr>
+<tr> <td> <a href="#FETCH_calls__CPU_">FETCH calls [CPU]</a> <td> 12.4%  <td> 0.0000s <td> 2 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#PARSE_calls__CPU_">PARSE calls [CPU]</a> <td> 0.5%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_more_data_to_client">SQL*Net more data to client</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#EXEC_calls__CPU_">EXEC calls [CPU]</a> <td> 0.0%  <td> 0.0000s <td> 2 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_message_to_client">SQL*Net message to client</a> <td> 0.0%  <td> 0.0000s <td> 2 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr><td><b>Total</b><td><b>100.0%</b><td><b>0.0001s</b><td colspan=4>&nbsp;</tr>
+</table>
+<br>
+<div class=elementTitle>Statement Binds Statistics</div>
+<b>total binds sets: 2&nbsp;&nbsp;&nbsp;&nbsp;unique binds sets: 2</b><br>
+<div class=elementTitle>Sample Bind Set</div>
+<b>met 1 time; elapsed time spent: 0.0000s </b><br>
+<table class=tp width=60%>
+<tr><th width=20%>Name<th width=20%>Data Type<th width=60%>Value
+<tr><td style='text-align:left'>1
+<td style='text-align:left'>CHAR
+<td style='text-align:left'>NULL
+<tr><td style='text-align:left'>2
+<td style='text-align:left'>CHAR
+<td style='text-align:left'>"01500000100"
+</table>
+<br>
+<a name=1147782982> </a>
+<div class=stmt>SQL Statement Id: 1147782982&nbsp;&nbsp;&nbsp;&nbsp; uid: 826&nbsp;&nbsp;&nbsp;&nbsp;depth: 0&nbsp;&nbsp;&nbsp;&nbsp;optimizer mode: CHOOSE</div>
+<div class=elementTitle>Statement Text</div>
+<pre>SELECT DISTINCT SOURCE, SOURCE 
+FROM DVURECH.V_WELL_PERFORATIONS UNION 
+SELECT 'Все', null 
+from dual
+
+</pre>
+<div class=elementTitle>Statement Cumulative Statistics</div>
+<table class=tp width=90%>
+<tr><th rowspan=2 width=10%>Call<th rowspan=2 width=8%>Cache<br>Misses<th rowspan=2 width=10%>Count<th colspan=2 width=20%> - Seconds -<th rowspan=2 width=10%>Physical<br>Reads<th colspan=2 width=20%> - Logical Reads -<th rowspan=2 width=10%>Rows
+<tr><th width=10%>CPU<th width=10%>Elapsed<th width=10%>Consistent<th width=10%>Current
+<tr><td>  Parse  <td>      1  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          2  <td>          0  <td>        0
+<tr><td>   Exec  <td>      0  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>  Fetch  <td> &nbsp;  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>         10  <td>      6,232  <td>          8  <td>        4
+<tr><td><b>  Total</b>  <td><b>      1</b>  <td><b>        3</b> <td><b>     0.0000s</b>  <td><b>     0.0000s</b>  <td><b>         10</b>  <td><b>      6,234</b>  <td><b>          8</b>  <td><b>        4</b>
+<tr><td colspan=9 height=10>
+<tr><td>Per Fch  <td>    1.0  <td>      3.0  <td>     0.0000s  <td>     0.0000s  <td>       10.0  <td>    6,234.0  <td>        8.0  <td>      4.0
+<tr><td>Per Row  <td>    0.3  <td>      0.8  <td>     0.0000s  <td>     0.0000s  <td>        2.5  <td>    1,558.5  <td>        2.0  <td>      1.0
+</table>
+<div class=elementTitle>Statement Self Statistics</div>
+<table class=tp width=90%>
+<tr><th rowspan=2 width=10%>Call<th rowspan=2 width=8%>Cache<br>Misses<th rowspan=2 width=10%>Count<th colspan=2 width=20%> - Seconds -<th rowspan=2 width=10%>Physical<br>Reads<th colspan=2 width=20%> - Logical Reads -<th rowspan=2 width=10%>Rows
+<tr><th width=10%>CPU<th width=10%>Elapsed<th width=10%>Consistent<th width=10%>Current
+<tr><td>  Parse  <td>      1  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>   Exec  <td>      0  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>  Fetch  <td> &nbsp;  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>         10  <td>      6,232  <td>          8  <td>        4
+<tr><td><b>  Total</b>  <td><b>      1</b>  <td><b>        3</b>  <td><b>     0.0000s</b>  <td><b>     0.0000s</b>  <td><b>         10</b>  <td><b>      6,232</b>  <td><b>          8</b>  <td><b>        4</b>
+<tr><td colspan=9 height=10>
+<tr><td>Per Fch  <td>    1.0  <td>      3.0  <td>     0.0000s  <td>     0.0000s  <td>       10.0  <td>    6,232.0  <td>        8.0  <td>      4.0
+<tr><td>Per Row  <td>    0.3  <td>      0.8  <td>     0.0000s  <td>     0.0000s  <td>        2.5  <td>    1,558.0  <td>        2.0  <td>      1.0
+</table>
+<div class=elementTitle>Statement Flat Profile</div>
+<table width=90% class=tp><tr> <th width=30% rowspan=2> Event Name <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#FETCH_calls__CPU_">FETCH calls [CPU]</a> <td> 82.4%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#db_file_scattered_read">db file scattered read</a> <td> 11.8%  <td> 0.0000s <td> 2 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#PARSE_calls__CPU_">PARSE calls [CPU]</a> <td> 5.9%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_message_to_client">SQL*Net message to client</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#db_file_sequential_read">db file sequential read</a> <td> 0.0%  <td> 0.0000s <td> 3 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_message_from_client__idle_">SQL*Net message from client [idle]</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#EXEC_calls__CPU_">EXEC calls [CPU]</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#file_open">file open</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr><td><b>Total</b><td><b>100.0%</b><td><b>0.0000s</b><td colspan=4>&nbsp;</tr>
+</table>
+<br>
+<div class=elementTitle>Statement Read Statistics</div>
+<table width=70% class=tp>
+<tr> <th rowspan=2 width=25%>Blocks Read per Call<th rowspan=2 width=10%> % Time <th rowspan=2 width=10%> Seconds <th rowspan=2 width=10%> Calls <th colspan=3 width=30%> - Time per Call -</tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr><td>5<td>100.0%<td>0.0000s<td>1<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>1<td>0.0%<td>0.0000s<td>3<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>2<td>0.0%<td>0.0000s<td>1<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td> <b>Total</b> <td> <b>100.0%</b> <td> <b>0.0000s</b><td> <b>5</b><td> <b>0.0000s</b><td> <b>0.0000s</b><td> <b>0.0000s</b>
+</table>
+<div class=elementTitle>Statement Read Datafiles Statistics</div>
+<table width=70% class=tp>
+<tr> <th rowspan=2 width=25%>Datafile #          <th rowspan=2 width=10%> % Time <th rowspan=2 width=10%> Seconds <th rowspan=2 width=10%> Calls <th colspan=3 width=30%> - Time per Call -</tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr><td>9<td>100.0%<td>0.0000s<td>3<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td>8<td>0.0%<td>0.0000s<td>2<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td> <b>Total</b> <td> <b>100.0%</b> <td> <b>0.0000s</b><td> <b>5</b><td> <b>0.0000s</b><td> <b>0.0000s</b><td> <b>0.0000s</b>
+</table>
+<br>
+<a name=908646012> </a>
+<div class=stmt>SQL Statement Id: 908646012&nbsp;&nbsp;&nbsp;&nbsp; uid: 826&nbsp;&nbsp;&nbsp;&nbsp;depth: 0&nbsp;&nbsp;&nbsp;&nbsp;optimizer mode: CHOOSE</div>
+<div class=elementTitle>Statement Text</div>
+<pre>SELECT FIELD_NAME,PROJ_FINDER   
+FROM CLASS.ALL_FIELD_HDR  
+WHERE FIELD_CODE = :b1
+
+</pre>
+<div class=elementTitle>Statement Cumulative Statistics</div>
+<table class=tp width=90%>
+<tr><th rowspan=2 width=10%>Call<th rowspan=2 width=8%>Cache<br>Misses<th rowspan=2 width=10%>Count<th colspan=2 width=20%> - Seconds -<th rowspan=2 width=10%>Physical<br>Reads<th colspan=2 width=20%> - Logical Reads -<th rowspan=2 width=10%>Rows
+<tr><th width=10%>CPU<th width=10%>Elapsed<th width=10%>Consistent<th width=10%>Current
+<tr><td>  Parse  <td>      1  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          2  <td>          0  <td>        0
+<tr><td>   Exec  <td>      0  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>  Fetch  <td> &nbsp;  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          6  <td>          8  <td>        1
+<tr><td><b>  Total</b>  <td><b>      1</b>  <td><b>        3</b> <td><b>     0.0000s</b>  <td><b>     0.0000s</b>  <td><b>          0</b>  <td><b>          8</b>  <td><b>          8</b>  <td><b>        1</b>
+<tr><td colspan=9 height=10>
+<tr><td>Per Fch  <td>    1.0  <td>      3.0  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>        8.0  <td>        8.0  <td>      1.0
+<tr><td>Per Row  <td>    1.0  <td>      3.0  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>        8.0  <td>        8.0  <td>      1.0
+</table>
+<div class=elementTitle>Statement Self Statistics</div>
+<table class=tp width=90%>
+<tr><th rowspan=2 width=10%>Call<th rowspan=2 width=8%>Cache<br>Misses<th rowspan=2 width=10%>Count<th colspan=2 width=20%> - Seconds -<th rowspan=2 width=10%>Physical<br>Reads<th colspan=2 width=20%> - Logical Reads -<th rowspan=2 width=10%>Rows
+<tr><th width=10%>CPU<th width=10%>Elapsed<th width=10%>Consistent<th width=10%>Current
+<tr><td>  Parse  <td>      1  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>   Exec  <td>      0  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>  Fetch  <td> &nbsp;  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          6  <td>          8  <td>        1
+<tr><td><b>  Total</b>  <td><b>      1</b>  <td><b>        3</b>  <td><b>     0.0000s</b>  <td><b>     0.0000s</b>  <td><b>          0</b>  <td><b>          6</b>  <td><b>          8</b>  <td><b>        1</b>
+<tr><td colspan=9 height=10>
+<tr><td>Per Fch  <td>    1.0  <td>      3.0  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>        6.0  <td>        8.0  <td>      1.0
+<tr><td>Per Row  <td>    1.0  <td>      3.0  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>        6.0  <td>        8.0  <td>      1.0
+</table>
+<div class=elementTitle>Statement Flat Profile</div>
+<table width=90% class=tp><tr> <th width=30% rowspan=2> Event Name <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#EXEC_calls__CPU_">EXEC calls [CPU]</a> <td> 100.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#FETCH_calls__CPU_">FETCH calls [CPU]</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#PARSE_calls__CPU_">PARSE calls [CPU]</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_message_from_client">SQL*Net message from client</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_message_from_client__idle_">SQL*Net message from client [idle]</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_message_to_client">SQL*Net message to client</a> <td> 0.0%  <td> 0.0000s <td> 3 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr><td><b>Total</b><td><b>100.0%</b><td><b>0.0000s</b><td colspan=4>&nbsp;</tr>
+</table>
+<br>
+<div class=elementTitle>Statement Plan</div>
+<b>met 1 time</b>
+<table class=tp width=80%>
+<tr>
+<th width=10%>Rows <th width=80%>Row Source Operation <th width=10%>Object Id</tr>
+<tr><td>1<br>1<br>1<br>1<br>2<br>0<br>2<br>1<td style='text-align:left; white-space:pre'>VIEW <br>  SORT UNIQUE <br>    UNION-ALL <br>      TABLE ACCESS BY INDEX ROWID FIELD_HDR <br>        INDEX UNIQUE SCAN <br>      FILTER <br>        TABLE ACCESS FULL FIELD_HDR <br>        TABLE ACCESS FULL FIELD_HDR <td>&nbsp;<br>&nbsp;<br>&nbsp;<br>10642<br>10643<br>&nbsp;<br>33942<br>10642
+</table>
+<br>
+<div class=elementTitle>Statement Binds Statistics</div>
+<b>total binds sets: 1&nbsp;&nbsp;&nbsp;&nbsp;unique binds sets: 1</b><br>
+<div class=elementTitle>Sample Bind Set</div>
+<b>met 1 time; elapsed time spent: 0.0000s </b><br>
+<table class=tp width=60%>
+<tr><th width=20%>Name<th width=20%>Data Type<th width=60%>Value
+<tr><td style='text-align:left'>b1
+<td style='text-align:left'>NUMBER
+<td style='text-align:left'>150
+</table>
+<br>
+<a name=2552766064> </a>
+<div class=stmt>SQL Statement Id: 2552766064&nbsp;&nbsp;&nbsp;&nbsp; uid: 826&nbsp;&nbsp;&nbsp;&nbsp;depth: 0&nbsp;&nbsp;&nbsp;&nbsp;optimizer mode: CHOOSE</div>
+<div class=elementTitle>Statement Text</div>
+<pre>SELECT WELL_NAME,UWI,ELEVATION 
+FROM (
+SELECT UWI, WELL_NAME, ELEVATION, LTRIM(SUBSTR( UWI, 1, 4), '0') FIELD_CODE 
+FROM DVURECH.WELL_HDR WH 
+WHERE SUBSTR(UWI,1,5)='01500' 
+ORDER BY UWI) 
+
+</pre>
+<div class=elementTitle>Statement Cumulative Statistics</div>
+<table class=tp width=90%>
+<tr><th rowspan=2 width=10%>Call<th rowspan=2 width=8%>Cache<br>Misses<th rowspan=2 width=10%>Count<th colspan=2 width=20%> - Seconds -<th rowspan=2 width=10%>Physical<br>Reads<th colspan=2 width=20%> - Logical Reads -<th rowspan=2 width=10%>Rows
+<tr><th width=10%>CPU<th width=10%>Elapsed<th width=10%>Consistent<th width=10%>Current
+<tr><td>  Parse  <td>      1  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>   Exec  <td>      0  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>  Fetch  <td> &nbsp;  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>         10  <td>          0  <td>       16
+<tr><td><b>  Total</b>  <td><b>      1</b>  <td><b>        3</b> <td><b>     0.0000s</b>  <td><b>     0.0000s</b>  <td><b>          0</b>  <td><b>         10</b>  <td><b>          0</b>  <td><b>       16</b>
+<tr><td colspan=9 height=10>
+<tr><td>Per Fch  <td>    1.0  <td>      3.0  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>       10.0  <td>        0.0  <td>     16.0
+<tr><td>Per Row  <td>    0.0  <td>      0.2  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>        0.6  <td>        0.0  <td>      1.0
+</table>
+<div class=elementTitle>Statement Flat Profile</div>
+<table width=90% class=tp><tr> <th width=30% rowspan=2> Event Name <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#SQL_Net_message_from_client__idle_">SQL*Net message from client [idle]</a> <td> 100.0%  <td> 0.0000s <td> 4 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#FETCH_calls__CPU_">FETCH calls [CPU]</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#PARSE_calls__CPU_">PARSE calls [CPU]</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#EXEC_calls__CPU_">EXEC calls [CPU]</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_message_to_client">SQL*Net message to client</a> <td> 0.0%  <td> 0.0000s <td> 3 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr><td><b>Total</b><td><b>100.0%</b><td><b>0.0000s</b><td colspan=4>&nbsp;</tr>
+</table>
+<br>
+<br>
+<a name=2760452225> </a>
+<div class=stmt>SQL Statement Id: 2760452225&nbsp;&nbsp;&nbsp;&nbsp; uid: 190&nbsp;&nbsp;&nbsp;&nbsp;depth: 1&nbsp;&nbsp;&nbsp;&nbsp;optimizer mode: CHOOSE</div>
+<div class=elementTitle>Statement Text</div>
+<pre>SELECT UWI   FROM WELL_PERFORATIONS  WHERE REC_ID = :b1
+
+</pre>
+<div class=elementTitle>Statement Cumulative Statistics</div>
+<table class=tp width=90%>
+<tr><th rowspan=2 width=10%>Call<th rowspan=2 width=8%>Cache<br>Misses<th rowspan=2 width=10%>Count<th colspan=2 width=20%> - Seconds -<th rowspan=2 width=10%>Physical<br>Reads<th colspan=2 width=20%> - Logical Reads -<th rowspan=2 width=10%>Rows
+<tr><th width=10%>CPU<th width=10%>Elapsed<th width=10%>Consistent<th width=10%>Current
+<tr><td>  Parse  <td>      1  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          3  <td>          0  <td>        0
+<tr><td>   Exec  <td>      0  <td>       18  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>  Fetch  <td> &nbsp;  <td>       18  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>         54  <td>          0  <td>       18
+<tr><td><b>  Total</b>  <td><b>      1</b>  <td><b>       37</b> <td><b>     0.0000s</b>  <td><b>     0.0000s</b>  <td><b>          0</b>  <td><b>         57</b>  <td><b>          0</b>  <td><b>       18</b>
+<tr><td colspan=9 height=10>
+<tr><td>Per Fch  <td>    0.0  <td>      2.1  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>        3.2  <td>        0.0  <td>      1.0
+<tr><td>Per Row  <td>    0.0  <td>      2.1  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>        3.2  <td>        0.0  <td>      1.0
+</table>
+<div class=elementTitle>Statement Self Statistics</div>
+<table class=tp width=90%>
+<tr><th rowspan=2 width=10%>Call<th rowspan=2 width=8%>Cache<br>Misses<th rowspan=2 width=10%>Count<th colspan=2 width=20%> - Seconds -<th rowspan=2 width=10%>Physical<br>Reads<th colspan=2 width=20%> - Logical Reads -<th rowspan=2 width=10%>Rows
+<tr><th width=10%>CPU<th width=10%>Elapsed<th width=10%>Consistent<th width=10%>Current
+<tr><td>  Parse  <td>      1  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>   Exec  <td>      0  <td>       18  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>  Fetch  <td> &nbsp;  <td>       18  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>         54  <td>          0  <td>       18
+<tr><td><b>  Total</b>  <td><b>      1</b>  <td><b>       37</b>  <td><b>     0.0000s</b>  <td><b>     0.0000s</b>  <td><b>          0</b>  <td><b>         54</b>  <td><b>          0</b>  <td><b>       18</b>
+<tr><td colspan=9 height=10>
+<tr><td>Per Fch  <td>    0.0  <td>      2.1  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>        3.0  <td>        0.0  <td>      1.0
+<tr><td>Per Row  <td>    0.0  <td>      2.1  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>        3.0  <td>        0.0  <td>      1.0
+</table>
+<div class=elementTitle>Statement Flat Profile</div>
+<table width=90% class=tp><tr> <th width=30% rowspan=2> Event Name <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#FETCH_calls__CPU_">FETCH calls [CPU]</a> <td> n/a %  <td> 0.0000s <td> 18 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#PARSE_calls__CPU_">PARSE calls [CPU]</a> <td> n/a %  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#EXEC_calls__CPU_">EXEC calls [CPU]</a> <td> n/a %  <td> 0.0000s <td> 18 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr><td><b>Total</b><td><b>100.0%</b><td><b>0.0000s</b><td colspan=4>&nbsp;</tr>
+</table>
+<br>
+<div class=elementTitle>Statement Binds Statistics</div>
+<b>total binds sets: 18&nbsp;&nbsp;&nbsp;&nbsp;unique binds sets: 18</b><br>
+<div class=elementTitle>Sample Bind Set</div>
+<b>met 1 time; elapsed time spent: 0.0000s </b><br>
+<table class=tp width=60%>
+<tr><th width=20%>Name<th width=20%>Data Type<th width=60%>Value
+<tr><td style='text-align:left'>b1
+<td style='text-align:left'>NUMBER
+<td style='text-align:left'>38635603
+</table>
+<br>
+<a name=1966425544> </a>
+<div class=stmt>SQL Statement Id: 1966425544&nbsp;&nbsp;&nbsp;&nbsp; uid: 0&nbsp;&nbsp;&nbsp;&nbsp;depth: 1&nbsp;&nbsp;&nbsp;&nbsp;optimizer mode: CHOOSE</div>
+<div class=elementTitle>Statement Text</div>
+<pre>select text from view$ where rowid=:1
+
+</pre>
+<div class=elementTitle>Statement Cumulative Statistics</div>
+<table class=tp width=90%>
+<tr><th rowspan=2 width=10%>Call<th rowspan=2 width=8%>Cache<br>Misses<th rowspan=2 width=10%>Count<th colspan=2 width=20%> - Seconds -<th rowspan=2 width=10%>Physical<br>Reads<th colspan=2 width=20%> - Logical Reads -<th rowspan=2 width=10%>Rows
+<tr><th width=10%>CPU<th width=10%>Elapsed<th width=10%>Consistent<th width=10%>Current
+<tr><td>  Parse  <td>      0  <td>        5  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>   Exec  <td>      0  <td>        5  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>  Fetch  <td> &nbsp;  <td>        5  <td>     0.0000s  <td>     0.0000s  <td>          1  <td>         10  <td>          0  <td>        5
+<tr><td><b>  Total</b>  <td><b>      0</b>  <td><b>       15</b> <td><b>     0.0000s</b>  <td><b>     0.0000s</b>  <td><b>          1</b>  <td><b>         10</b>  <td><b>          0</b>  <td><b>        5</b>
+<tr><td colspan=9 height=10>
+<tr><td>Per Fch  <td>    0.0  <td>      3.0  <td>     0.0000s  <td>     0.0000s  <td>        0.2  <td>        2.0  <td>        0.0  <td>      1.0
+<tr><td>Per Row  <td>    0.0  <td>      3.0  <td>     0.0000s  <td>     0.0000s  <td>        0.2  <td>        2.0  <td>        0.0  <td>      1.0
+</table>
+<div class=elementTitle>Statement Flat Profile</div>
+<table width=90% class=tp><tr> <th width=30% rowspan=2> Event Name <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#SQL_Net_message_from_client">SQL*Net message from client</a> <td> 100.0%  <td> 0.0040s <td> 1 <td> 0.0040s <td> 0.0040s <td> 0.0040s </tr>
+<tr> <td> <a href="#EXEC_calls__CPU_">EXEC calls [CPU]</a> <td> 0.0%  <td> 0.0000s <td> 5 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#FETCH_calls__CPU_">FETCH calls [CPU]</a> <td> 0.0%  <td> 0.0000s <td> 5 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#PARSE_calls__CPU_">PARSE calls [CPU]</a> <td> 0.0%  <td> 0.0000s <td> 5 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#db_file_sequential_read">db file sequential read</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#file_open">file open</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr><td><b>Total</b><td><b>100.0%</b><td><b>0.0040s</b><td colspan=4>&nbsp;</tr>
+</table>
+<br>
+<div class=elementTitle>Statement Read Statistics</div>
+<table width=70% class=tp>
+<tr> <th rowspan=2 width=25%>Blocks Read per Call<th rowspan=2 width=10%> % Time <th rowspan=2 width=10%> Seconds <th rowspan=2 width=10%> Calls <th colspan=3 width=30%> - Time per Call -</tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr><td>1<td>n/a %<td>0.0000s<td>1<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td> <b>Total</b> <td> <b>100.0%</b> <td> <b>0.0000s</b><td> <b>1</b><td> <b>0.0000s</b><td> <b>0.0000s</b><td> <b>0.0000s</b>
+</table>
+<div class=elementTitle>Statement Read Datafiles Statistics</div>
+<table width=70% class=tp>
+<tr> <th rowspan=2 width=25%>Datafile #          <th rowspan=2 width=10%> % Time <th rowspan=2 width=10%> Seconds <th rowspan=2 width=10%> Calls <th colspan=3 width=30%> - Time per Call -</tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr><td>1<td>n/a %<td>0.0000s<td>1<td>0.0000s<td>0.0000s<td>0.0000s</tr>
+<tr><td> <b>Total</b> <td> <b>100.0%</b> <td> <b>0.0000s</b><td> <b>1</b><td> <b>0.0000s</b><td> <b>0.0000s</b><td> <b>0.0000s</b>
+</table>
+<div class=elementTitle>Statement Plan</div>
+<b>met 5 times</b>
+<table class=tp width=80%>
+<tr>
+<th width=10%>Rows <th width=80%>Row Source Operation <th width=10%>Object Id</tr>
+<tr><td>5<td style='text-align:left; white-space:pre'>TABLE ACCESS BY USER ROWID VIEW$ <td>59
+</table>
+<br>
+<div class=elementTitle>Statement Binds Statistics</div>
+<b>total binds sets: 5&nbsp;&nbsp;&nbsp;&nbsp;unique binds sets: 3</b><br>
+<div class=elementTitle>Sample Bind Set</div>
+<b>met 2 times; elapsed time spent: 0.0000s </b><br>
+<table class=tp width=60%>
+<tr><th width=20%>Name<th width=20%>Data Type<th width=60%>Value
+<tr><td style='text-align:left'>1
+<td style='text-align:left'>ROWID
+<td style='text-align:left'>000048EB.0002.0002
+</table>
+<br>
+<a name=626894880> </a>
+<div class=stmt>SQL Statement Id: 626894880&nbsp;&nbsp;&nbsp;&nbsp; uid: 190&nbsp;&nbsp;&nbsp;&nbsp;depth: 1&nbsp;&nbsp;&nbsp;&nbsp;optimizer mode: CHOOSE</div>
+<div class=elementTitle>Statement Text</div>
+<pre>SELECT REC_ID,COMP_DATE,TOP,BASE   
+FROM WELL_PERFORATIONS  
+WHERE UWI = :b1 
+ORDER BY COMP_DATE,TOP
+
+</pre>
+<div class=elementTitle>Statement Cumulative Statistics</div>
+<table class=tp width=90%>
+<tr><th rowspan=2 width=10%>Call<th rowspan=2 width=8%>Cache<br>Misses<th rowspan=2 width=10%>Count<th colspan=2 width=20%> - Seconds -<th rowspan=2 width=10%>Physical<br>Reads<th colspan=2 width=20%> - Logical Reads -<th rowspan=2 width=10%>Rows
+<tr><th width=10%>CPU<th width=10%>Elapsed<th width=10%>Consistent<th width=10%>Current
+<tr><td>  Parse  <td>      1  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>   Exec  <td>      0  <td>       18  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>  Fetch  <td> &nbsp;  <td>      342  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>         54  <td>          0  <td>      324
+<tr><td><b>  Total</b>  <td><b>      1</b>  <td><b>      361</b> <td><b>     0.0000s</b>  <td><b>     0.0000s</b>  <td><b>          0</b>  <td><b>         54</b>  <td><b>          0</b>  <td><b>      324</b>
+<tr><td colspan=9 height=10>
+<tr><td>Per Fch  <td>    0.0  <td>      1.1  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>        0.2  <td>        0.0  <td>      0.9
+<tr><td>Per Row  <td>    0.0  <td>      1.1  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>        0.2  <td>        0.0  <td>      1.0
+</table>
+<div class=elementTitle>Statement Flat Profile</div>
+<table width=90% class=tp><tr> <th width=30% rowspan=2> Event Name <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#EXEC_calls__CPU_">EXEC calls [CPU]</a> <td> 75.0%  <td> 0.0000s <td> 18 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#FETCH_calls__CPU_">FETCH calls [CPU]</a> <td> 25.0%  <td> 0.0000s <td> 342 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#PARSE_calls__CPU_">PARSE calls [CPU]</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr><td><b>Total</b><td><b>100.0%</b><td><b>0.0000s</b><td colspan=4>&nbsp;</tr>
+</table>
+<br>
+<div class=elementTitle>Statement Binds Statistics</div>
+<b>total binds sets: 18&nbsp;&nbsp;&nbsp;&nbsp;unique binds sets: 1</b><br>
+<div class=elementTitle>Sample Bind Set</div>
+<b>met 18 times; elapsed time spent: 0.0000s </b><br>
+<table class=tp width=60%>
+<tr><th width=20%>Name<th width=20%>Data Type<th width=60%>Value
+<tr><td style='text-align:left'>b1
+<td style='text-align:left'>VARCHAR2
+<td style='text-align:left'>"015000001W0"
+</table>
+<br>
+<a name=pe/000000> </a>
+<div class=stmt>Erroneous SQL Statement Id: pe/000000&nbsp;&nbsp;&nbsp;&nbsp;uid: 826&nbsp;&nbsp;&nbsp;&nbsp;depth: 0</div>
+<div class=elementTitle> Erroneous Statement Text </div>
+<pre>SELECT DISTINCT NAME, SOURCE 
+FROM DVURECH.WELL_SELECT_LISTS B 
+WHERE A.DATA_TYPE = 'WELLS' AND A.NAME = B.SLIST_NAME AND SUBSTR(UWI, 1, 4) =
+  '0150'
+ORDER BY 1, 2
+
+</pre>
+<div class=alert>This statement failed to parse with error: ORA-904</div>
+<div class=elementTitle>Statement Cumulative Statistics</div>
+<pre>  No cumulative stat found in trace file</pre><br>
+<div class=elementTitle>Statement Flat Profile</div>
+<table width=90% class=tp><tr> <th width=30% rowspan=2> Event Name <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#SQL_Net_message_from_client__idle_">SQL*Net message from client [idle]</a> <td> 100.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_break/reset_to_client">SQL*Net break/reset to client</a> <td> 0.0%  <td> 0.0000s <td> 2 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_message_to_client">SQL*Net message to client</a> <td> 0.0%  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr><td><b>Total</b><td><b>100.0%</b><td><b>0.0000s</b><td colspan=4>&nbsp;</tr>
+</table>
+<br>
+<br>
+<a name=Cursor__0> </a>
+<div class=stmt>SQL Statement Id: Cursor #0&nbsp;&nbsp;&nbsp;&nbsp;uid: n/a</div>
+<div class=elementTitle>Statement Text</div>
+<pre>  No statement text found in trace file</pre>
+<div class=elementTitle>Statement Cumulative Statistics</div>
+<pre>  No cumulative stat found in trace file</pre><br>
+<div class=elementTitle>Statement Flat Profile</div>
+<table width=90% class=tp><tr> <th width=30% rowspan=2> Event Name <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#SQL_Net_message_from_client__idle_">SQL*Net message from client [idle]</a> <td> 100.0%  <td> 0.0000s <td> 2 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_more_data_to_client">SQL*Net more data to client</a> <td> 0.0%  <td> 0.0000s <td> 4 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#SQL_Net_message_to_client">SQL*Net message to client</a> <td> 0.0%  <td> 0.0000s <td> 2 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr><td><b>Total</b><td><b>100.0%</b><td><b>0.0000s</b><td colspan=4>&nbsp;</tr>
+</table>
+<br>
+<br>
+<a name=1005331575> </a>
+<div class=stmt>SQL Statement Id: 1005331575&nbsp;&nbsp;&nbsp;&nbsp; uid: 0&nbsp;&nbsp;&nbsp;&nbsp;depth: 2&nbsp;&nbsp;&nbsp;&nbsp;optimizer mode: CHOOSE</div>
+<div class=elementTitle>Statement Text</div>
+<pre>select user# from sys.user$ where name = 'OUTLN'
+
+</pre>
+<div class=elementTitle>Statement Cumulative Statistics</div>
+<table class=tp width=90%>
+<tr><th rowspan=2 width=10%>Call<th rowspan=2 width=8%>Cache<br>Misses<th rowspan=2 width=10%>Count<th colspan=2 width=20%> - Seconds -<th rowspan=2 width=10%>Physical<br>Reads<th colspan=2 width=20%> - Logical Reads -<th rowspan=2 width=10%>Rows
+<tr><th width=10%>CPU<th width=10%>Elapsed<th width=10%>Consistent<th width=10%>Current
+<tr><td>  Parse  <td>      0  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>   Exec  <td>      0  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          0  <td>          0  <td>        0
+<tr><td>  Fetch  <td> &nbsp;  <td>        1  <td>     0.0000s  <td>     0.0000s  <td>          0  <td>          3  <td>          0  <td>        1
+<tr><td><b>  Total</b>  <td><b>      0</b>  <td><b>        3</b> <td><b>     0.0000s</b>  <td><b>     0.0000s</b>  <td><b>          0</b>  <td><b>          3</b>  <td><b>          0</b>  <td><b>        1</b>
+<tr><td colspan=9 height=10>
+<tr><td>Per Fch  <td>    0.0  <td>      3.0  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>        3.0  <td>        0.0  <td>      1.0
+<tr><td>Per Row  <td>    0.0  <td>      3.0  <td>     0.0000s  <td>     0.0000s  <td>        0.0  <td>        3.0  <td>        0.0  <td>      1.0
+</table>
+<div class=elementTitle>Statement Flat Profile</div>
+<table width=90% class=tp><tr> <th width=30% rowspan=2> Event Name <th width=10% rowspan=2> % Time<th width=10% rowspan=2> Seconds <th width=10% rowspan=2> Calls<th width=30% colspan=3> - Time per Call - </tr><tr> <th width=10%> Avg <th width=10%> Min <th width=10%> Max </tr>
+<tr> <td> <a href="#FETCH_calls__CPU_">FETCH calls [CPU]</a> <td> n/a %  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#PARSE_calls__CPU_">PARSE calls [CPU]</a> <td> n/a %  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr> <td> <a href="#EXEC_calls__CPU_">EXEC calls [CPU]</a> <td> n/a %  <td> 0.0000s <td> 1 <td> 0.0000s <td> 0.0000s <td> 0.0000s </tr>
+<tr><td><b>Total</b><td><b>100.0%</b><td><b>0.0000s</b><td colspan=4>&nbsp;</tr>
+</table>
+<br>
+<div class=elementTitle>Statement Plan</div>
+<b>met 1 time</b>
+<table class=tp width=80%>
+<tr>
+<th width=10%>Rows <th width=80%>Row Source Operation <th width=10%>Object Id</tr>
+<tr><td>1<br>1<td style='text-align:left; white-space:pre'>TABLE ACCESS BY INDEX ROWID USER$ <br>  INDEX UNIQUE SCAN <td>22<br>41
+</table>
+<br>
+<br>
+<br><div class="copyright"><center>Generated by <a href="http://oracledba.ru/orasrp">OraSRP</a> v3.1.2 beta</center>
+</body>
+</html>

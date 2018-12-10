@@ -1,0 +1,285 @@
+/apps/Oracle8/admin/finder/udump/finder_ora_5178.trc
+Oracle8i Enterprise Edition Release 8.1.6.0.0 - Production
+JServer Release 8.1.6.0.0 - Production
+ORACLE_HOME = /apps/Oracle8
+System name:	SunOS
+Node name:	e4000
+Release:	5.7
+Version:	Generic_106541-16
+Machine:	sun4u
+Instance name: finder
+Redo thread mounted by this instance: 1
+Oracle process number: 114
+Unix process pid: 5178, image: oracle@e4000 (TNS V1-V3)
+
+*** SESSION ID:(178.41789) 2008-11-19 17:14:40.029
+=====================
+PARSING IN CURSOR #3 len=69 dep=2 uid=0 oct=42 lid=0 tim=2450243715 hv=1509700594 ad='81b7d2c0'
+alter session set events '10046 trace name context forever, level 12'
+END OF STMT
+EXEC #3:c=0,e=1,p=0,cr=0,cu=0,mis=0,r=0,dep=2,og=4,tim=2450243715
+=====================
+PARSING IN CURSOR #1 len=314 dep=1 uid=0 oct=47 lid=0 tim=2450243715 hv=779219308 ad='811253ac'
+DECLARE
+tt VARCHAR2(150);
+BEGIN
+  IF USER='OVER' THEN
+  EXECUTE IMMEDIATE 'alter session set timed_statistics=true';
+  EXECUTE IMMEDIATE 'alter session set max_dump_file_size=unlimited';
+  tt:='alter session set events ''10046 trace name context forever, level 12''';
+  EXECUTE IMMEDIATE tt;
+  END IF;
+  null;
+end;
+END OF STMT
+EXEC #1:c=0,e=0,p=0,cr=1,cu=4,mis=0,r=1,dep=1,og=4,tim=2450243715
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 1 p1=1413697536 p2=1 p3=0
+=====================
+PARSING IN CURSOR #1 len=52 dep=0 uid=826 oct=42 lid=826 tim=2450243716 hv=3397948939 ad='813a1fbc'
+ALTER SESSION SET REMOTE_DEPENDENCIES_MODE=SIGNATURE
+END OF STMT
+PARSE #1:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450243716
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+BINDS #1:
+EXEC #1:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450243716
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 3 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+=====================
+PARSING IN CURSOR #1 len=71 dep=0 uid=826 oct=3 lid=826 tim=2450243719 hv=2948335649 ad='8349fa9c'
+SELECT SHOW_FLAG   FROM CLASS.WEB_FORM_V_TOOL_BAR  WHERE USERNAME = :b1
+END OF STMT
+PARSE #1:c=1,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450243719
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+BINDS #1:
+ bind 0: dty=1 mxl=128(100) mal=00 scl=00 pre=00 oacflg=03 oacfl2=10 size=128 offset=0
+   bfp=0173bc70 bln=128 avl=04 flg=05
+   value="OVER"
+EXEC #1:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450243719
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+FETCH #1:c=0,e=0,p=0,cr=2,cu=0,mis=0,r=1,dep=0,og=4,tim=2450243719
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 1 p1=1413697536 p2=1 p3=0
+STAT #1 id=1 cnt=1 pid=0 pos=0 obj=10683 op='TABLE ACCESS BY INDEX ROWID WEB_FORM_V_TOOL_BAR '
+STAT #1 id=2 cnt=2 pid=1 pos=1 obj=10684 op='INDEX UNIQUE SCAN '
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 3 p1=1413697536 p2=1 p3=0
+=====================
+PARSING IN CURSOR #1 len=77 dep=0 uid=826 oct=3 lid=826 tim=2450243723 hv=4008341495 ad='83026c54'
+SELECT ROWID,text,TYPE,M_NAME FROM WEB_START WHERE B_NAME = 'E'  order by orn
+END OF STMT
+PARSE #1:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450243723
+BINDS #1:
+EXEC #1:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450243723
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='file open' ela= 0 p1=0 p2=0 p3=0
+WAIT #1: nam='db file sequential read' ela= 0 p1=6 p2=12559 p3=1
+WAIT #1: nam='db file sequential read' ela= 0 p1=6 p2=12560 p3=1
+FETCH #1:c=1,e=0,p=2,cr=1,cu=4,mis=0,r=5,dep=0,og=4,tim=2450243723
+WAIT #1: nam='SQL*Net message from client' ela= 1 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+=====================
+PARSING IN CURSOR #3 len=77 dep=0 uid=826 oct=3 lid=826 tim=2450243724 hv=3483405815 ad='830259a4'
+SELECT ROWID,text,TYPE,M_NAME FROM WEB_START WHERE B_NAME = 'D'  order by orn
+END OF STMT
+PARSE #3:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450243724
+BINDS #3:
+EXEC #3:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450243724
+WAIT #3: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+FETCH #3:c=0,e=0,p=0,cr=1,cu=4,mis=0,r=5,dep=0,og=4,tim=2450243724
+WAIT #3: nam='SQL*Net message from client' ela= 1 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+=====================
+PARSING IN CURSOR #4 len=77 dep=0 uid=826 oct=3 lid=826 tim=2450243725 hv=3813600490 ad='8301efac'
+SELECT ROWID,text,TYPE,M_NAME FROM WEB_START WHERE B_NAME = 'C'  order by orn
+END OF STMT
+PARSE #4:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450243725
+BINDS #4:
+EXEC #4:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450243725
+WAIT #4: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+FETCH #4:c=1,e=0,p=0,cr=1,cu=4,mis=0,r=6,dep=0,og=4,tim=2450243725
+WAIT #4: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 1 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+=====================
+PARSING IN CURSOR #5 len=77 dep=0 uid=826 oct=3 lid=826 tim=2450243726 hv=553856091 ad='8301ffdc'
+SELECT ROWID,text,TYPE,M_NAME FROM WEB_START WHERE B_NAME = 'B'  order by orn
+END OF STMT
+PARSE #5:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450243726
+BINDS #5:
+EXEC #5:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450243726
+WAIT #5: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+FETCH #5:c=0,e=0,p=0,cr=1,cu=4,mis=0,r=8,dep=0,og=4,tim=2450243726
+WAIT #5: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+=====================
+PARSING IN CURSOR #6 len=77 dep=0 uid=826 oct=3 lid=826 tim=2450243727 hv=3237371650 ad='8301db1c'
+SELECT ROWID,text,TYPE,M_NAME FROM WEB_START WHERE B_NAME = 'A'  order by orn
+END OF STMT
+PARSE #6:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450243727
+BINDS #6:
+EXEC #6:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450243727
+WAIT #6: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+FETCH #6:c=0,e=0,p=0,cr=1,cu=4,mis=0,r=10,dep=0,og=4,tim=2450243727
+WAIT #6: nam='SQL*Net message from client' ela= 850 p1=1413697536 p2=1 p3=0
+*** SESSION ID:(185.21920) 2008-11-19 17:14:48.695
+=====================
+PARSING IN CURSOR #3 len=69 dep=2 uid=0 oct=42 lid=0 tim=2450244581 hv=1509700594 ad='81b7d2c0'
+alter session set events '10046 trace name context forever, level 12'
+END OF STMT
+EXEC #3:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=2,og=4,tim=2450244581
+=====================
+PARSING IN CURSOR #1 len=314 dep=1 uid=0 oct=47 lid=0 tim=2450244581 hv=779219308 ad='811253ac'
+DECLARE
+tt VARCHAR2(150);
+BEGIN
+  IF USER='OVER' THEN
+  EXECUTE IMMEDIATE 'alter session set timed_statistics=true';
+  EXECUTE IMMEDIATE 'alter session set max_dump_file_size=unlimited';
+  tt:='alter session set events ''10046 trace name context forever, level 12''';
+  EXECUTE IMMEDIATE tt;
+  END IF;
+  null;
+end;
+END OF STMT
+EXEC #1:c=0,e=0,p=0,cr=1,cu=4,mis=0,r=1,dep=1,og=4,tim=2450244581
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+=====================
+PARSING IN CURSOR #1 len=52 dep=0 uid=826 oct=42 lid=826 tim=2450244582 hv=3397948939 ad='813a1fbc'
+ALTER SESSION SET REMOTE_DEPENDENCIES_MODE=SIGNATURE
+END OF STMT
+PARSE #1:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450244582
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+BINDS #1:
+EXEC #1:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450244582
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+*** SESSION ID:(178.41789) 2008-11-19 17:14:48.705
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #7: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #7: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+=====================
+PARSING IN CURSOR #7 len=52 dep=0 uid=826 oct=42 lid=826 tim=2450244582 hv=3397948939 ad='813a1fbc'
+ALTER SESSION SET REMOTE_DEPENDENCIES_MODE=SIGNATURE
+END OF STMT
+PARSE #7:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450244582
+WAIT #7: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #7: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+BINDS #7:
+EXEC #7:c=0,e=1,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450244583
+WAIT #7: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #7: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #7: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #7: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+*** SESSION ID:(185.21920) 2008-11-19 17:14:48.712
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+=====================
+PARSING IN CURSOR #1 len=52 dep=0 uid=826 oct=42 lid=826 tim=2450244583 hv=3397948939 ad='813a1fbc'
+ALTER SESSION SET REMOTE_DEPENDENCIES_MODE=SIGNATURE
+END OF STMT
+PARSE #1:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450244583
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+BINDS #1:
+EXEC #1:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450244583
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 37 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+=====================
+PARSING IN CURSOR #1 len=96 dep=0 uid=826 oct=2 lid=826 tim=2450244621 hv=3482422653 ad='82e860a4'
+INSERT INTO CLASS.WEB_FORMS_AUDIT ( USERNAME,FORM_NAME,LOGON_TIME )  VALUES ( :b1,:b2,SYSDATE  )
+END OF STMT
+PARSE #1:c=0,e=1,p=0,cr=0,cu=0,mis=1,r=0,dep=0,og=0,tim=2450244621
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+BINDS #1:
+ bind 0: dty=1 mxl=128(100) mal=00 scl=00 pre=00 oacflg=03 oacfl2=10 size=160 offset=0
+   bfp=0173bc50 bln=128 avl=04 flg=05
+   value="OVER"
+ bind 1: dty=1 mxl=32(17) mal=00 scl=00 pre=00 oacflg=21 oacfl2=10 size=0 offset=128
+   bfp=0173bcd0 bln=32 avl=17 flg=01
+   value="WELL_PERFORATIONS"
+EXEC #1:c=1,e=0,p=0,cr=1,cu=3,mis=0,r=1,dep=0,og=4,tim=2450244621
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+XCTEND rlbk=0, rd_only=0
+WAIT #0: nam='log file sync' ela= 1 p1=49 p2=0 p3=0
+WAIT #0: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #0: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #3: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #3: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+=====================
+PARSING IN CURSOR #3 len=71 dep=0 uid=826 oct=3 lid=826 tim=2450244623 hv=2948335649 ad='8349fa9c'
+SELECT SHOW_FLAG   FROM CLASS.WEB_FORM_V_TOOL_BAR  WHERE USERNAME = :b1
+END OF STMT
+PARSE #3:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450244623
+WAIT #3: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #3: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+BINDS #3:
+ bind 0: dty=1 mxl=128(100) mal=00 scl=00 pre=00 oacflg=03 oacfl2=10 size=128 offset=0
+   bfp=0173bc70 bln=128 avl=04 flg=05
+   value="OVER"
+EXEC #3:c=0,e=0,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=4,tim=2450244623
+WAIT #3: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+FETCH #3:c=0,e=0,p=0,cr=2,cu=0,mis=0,r=1,dep=0,og=4,tim=2450244623
+WAIT #3: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #3: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #3: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
+WAIT #1: nam='SQL*Net message from client' ela= 0 p1=1413697536 p2=1 p3=0
+STAT #3 id=1 cnt=1 pid=0 pos=0 obj=10683 op='TABLE ACCESS BY INDEX ROWID WEB_FORM_V_TOOL_BAR '
+STAT #3 id=2 cnt=2 pid=1 pos=1 obj=10684 op='INDEX UNIQUE SCAN '
+WAIT #3: nam='SQL*Net message to client' ela= 0 p1=1413697536 p2=1 p3=0
